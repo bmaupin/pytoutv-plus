@@ -47,6 +47,8 @@ import toutv.transport
 import toutvcli.app
 
 
+# Bitrates less than this value will be considered more or less the same when downloading
+MAX_BITRATE_DIFFERENCE = 2000
 # The maximum number of times an emission will be listed as new
 MAX_NEW_COUNT = 3
 # The maximum number of times per operation timeout errors will be ignored
@@ -328,7 +330,7 @@ class App(toutvcli.app.App):
 
         # Don't download if episode already downloaded
         if store_episode is not None and not overwrite:
-            if store_episode.bitrate == bitrate:
+            if abs(int(store_episode.bitrate) - int(bitrate)) <= MAX_BITRATE_DIFFERENCE:
                 print('Already downloaded (use -f to download anyway): {} - {} - {}'.format(
                     episode._emission.Title,
                     episode.SeasonAndEpisode,
