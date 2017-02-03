@@ -328,6 +328,13 @@ class App(toutvcli.app.App):
             elif quality == toutvcli.app.App.QUALITY_AVG:
                 bitrate = toutvcli.app.App._get_average_bitrate(qualities)
 
+        # Try to select a matching bitrate if it's within the specified tolerance
+        else:
+            for quality in qualities:
+                if abs(int(quality.bitrate) - int(bitrate)) <= MAX_BITRATE_DIFFERENCE:
+                    bitrate = quality.bitrate
+                    break
+
         # Don't download if episode already downloaded
         if store_episode is not None and not overwrite:
             if abs(int(store_episode.bitrate) - int(bitrate)) <= MAX_BITRATE_DIFFERENCE:
