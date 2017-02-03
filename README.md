@@ -24,4 +24,4 @@ Adds a few extra features to [pytoutv](https://github.com/bvanheu/pytoutv):
 
 **Usage**
 
-    pytoutv --help
+    toutv --help
