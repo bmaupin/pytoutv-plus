@@ -20,7 +20,7 @@ setup_requires = [
 ]
 
 setup(name='pytoutv_plus',
-      version='0.1',
+      version='0.1.1',
       entry_points=entry_points,
       packages=['pytoutv_plus'],
       setup_requires=setup_requires,
