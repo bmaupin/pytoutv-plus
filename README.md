@@ -5,6 +5,7 @@ Adds a few extra features to [pytoutv](https://github.com/bvanheu/pytoutv):
   - Fetch episodes in order
   - Only fetch undownloaded episodes
   - Less verbose file naming
+  - More flexible bitrate matching
 
 - list
   - Retry on timeout
@@ -13,12 +14,14 @@ Adds a few extra features to [pytoutv](https://github.com/bvanheu/pytoutv):
 
 **Installation**
 
-```
- git clone https://github.com/bvanheu/pytoutv.git
- cd pytoutv
- sudo python3 setup.py install
- cd ..
- git clone https://github.com/bmaupin/pytoutv-plus.git
- cd pytoutv-plus
- sudo python3 setup.py install
-```
+    git clone https://github.com/bvanheu/pytoutv.git
+    cd pytoutv
+    sudo python3 setup.py install
+    cd ..
+    git clone https://github.com/bmaupin/pytoutv-plus.git
+    cd pytoutv-plus
+    sudo python3 setup.py install
+
+**Usage**
+
+    pytoutv --help
